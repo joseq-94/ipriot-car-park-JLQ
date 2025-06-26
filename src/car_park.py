@@ -6,4 +6,3 @@ class CarPark:
         self.display = display or []
 
     def __str__(self):
-        
