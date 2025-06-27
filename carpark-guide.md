@@ -394,8 +394,8 @@ For example, you may want to see the number of available bays, the current tempe
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
-> The answer is Car_park, because it contains the capacity attribute that defines the 
-> maximum number of vehicules.
+> The answer is Carpark, because it contains the capacity attribute that defines the 
+> maximum number of vehicles.
 
 >Q. Which class is responsible for the current temperature (and why)?
 >The sensor class, because it is designated to detect and report real-world data such as 
@@ -479,23 +479,33 @@ Add a screenshot of the GitHub repository after pushing the tag, showing the Car
 ```markdown
 ![Added methods to the car park class](screenshots/methods-to-car-park.png)
 ```
+![img_5.png](img_5.png)
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - *The number of available bays*
->      `Answer here...`
+>      `The answer is the same, Carpark because it contains the capacity attribute that 
+>       defines the maximum number of vehicles.
 >    - *The current temperature*
->      `Answer here...`
+>      `The sensor class, because it is designated to detect and report real-world data such as 
+> report. 
 >    - *The time*
->      `Answer here...`
+>      `The sensor class as well, particulary the entrysensor and exitsensor subclasses for 
+> capturing timestamps`
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `Attribute is a simple variable attached to an object like number or name. On the 
+> another hand, property uses hidden methods to add control, also customize how a value is 
+> set or retrieved.
+`
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+> because it is flexible and scalable design choice.
+> Advantage: A dictionary lets you bundle multiple pieces of related data.
+> Disadvantage: dictionaries are dynamic, 
+> it’s not always clear what keys are expected or what type of data each key should hold.
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 
