@@ -6,3 +6,7 @@ class Display:
 
     def __str__(self):
         return f"Display {self.Display_Id}: {self.Message}"
+
+    def update(self, Data):
+        for key, value in Data.items():
+            print(f"{key}: {value}")

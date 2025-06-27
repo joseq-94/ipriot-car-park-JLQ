@@ -29,7 +29,7 @@ class CarPark:
             print(f"Car {plate} entered.")
         else:
             print("Car park full. Cannot add more vehicles.")
-        self.update_displays()
+        self.Update_displays()
 
     def remove_car(self,plate):
         if plate in self.plates:
@@ -37,10 +37,16 @@ class CarPark:
             print(f"Car {plate} exited.")
         else:
             print(f"Car {plate} not found.")
-        self.update_displays()
+        self.Update_displays()
 
     def Update_displays(self):
         for display in self.displays:
             display.update(self)
+
+    def available_bays(self):
+        return self.capacity - len(self.plates)
+    if available_bays() == 0:
+        print("No available bays.")
+
 
 
