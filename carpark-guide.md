@@ -809,7 +809,8 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
    ```markdown
-   ![Unit tests](screenshots/unit-tests-display.png)
+![img_10.png](img_10.png)
+![img_11.png](img_11.png)
    ```
 
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
@@ -824,12 +825,14 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 Finally, we'll create tests for the `Sensor` class. These tests will test the `__init__` method and the `detect_vehicle` method. Implement at least two relevant unit tests.
 
 > **Note**: Because the Sensor is abstract you cannot directly test it. You can only test its concrete subclasses.
+![img_12.png](img_12.png)
 
 ### 2.12. Test the car park register method
 
 The car park register method should accept a `Sensor` (optional) or `Display` object. It should raise a `TypeError` if the object is neither a `Sensor` nor a `Display`. Before proceeding, think about where you would test this behaviour. Should you test it in the `CarPark` unit tests or the `Display`/`Sensor` unit tests? Why?
 
-> Answer here...
+> It should be test in carpark because this behavior concerns how the CarPark handles 
+> registration logic. It's responsible for deciding which objects are valid to register. 
 
 Create a new unit test in the `test_car_park.py` file called `test_register_raises_type_error`. This test should create a `CarPark` object and a `str` object. It should then call the `register` method on the `CarPark` object with the `str` object as a parameter. The test should assert that a `TypeError` is raised. Here is a sample implementation:
 
@@ -840,6 +843,7 @@ with self.assertRaises(TypeError):
 ```
 
 **Additional evidencing:**
+![img_13.png](img_13.png)
 
 Commit your original test cases for the sensor class to the local repository. Tag the commit with `s8` so your lecturer can find it.
 
