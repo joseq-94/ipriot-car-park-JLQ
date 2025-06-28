@@ -1,15 +1,19 @@
+from pathlib import Path
 from sensor import Sensor
 from display import Display
 
 
 class CarPark:
-    def __init__(self, location = "Unknown", capacity = 100, plates = None, display = None,
-                 sensors = None):
+    def __init__(self, location = "Unknown", capacity = 100, log_file='log.text' ,plates =
+    None, display = None, sensors = None):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
         self.displays = display or []
         self.sensors = sensors or []
+        self.log_file = Path(log_file)
+        if not self.log_file.exists():
+            self.log_file.touch()
 
     def __str__(self):
         return f"Welcome to {self.location} CarPark | Capacity: {self.capacity}"
@@ -33,7 +37,6 @@ class CarPark:
         for display in self.displays:
             display.update(self.available_bays)
             print(f"Car {display} updated.")
-
 
     @property
     def available_bays(self):
