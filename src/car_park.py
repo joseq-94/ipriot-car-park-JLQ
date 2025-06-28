@@ -12,7 +12,7 @@ class CarPark:
         self.sensors = sensors or []
 
     def __str__(self):
-        return f"CarPark en {self.location} | Capacity: {self.capacity}"
+        return f"Welcome to {self.location} CarPark | Capacity: {self.capacity}"
 
     #this method will allow the car park to register sensors and display
     def register(self, component):
@@ -24,29 +24,18 @@ class CarPark:
             raise TypeError("Object must be a sensor or display")
 
     def add_car(self, plate):
-        if len(self.plates) < self.capacity:
-            self.plates.append(plate)
-            print(f"Car {plate} entered.")
-        else:
-            print("Car park full. Cannot add more vehicles.")
-        self.Update_displays()
+        self.plates.append(plate)
 
     def remove_car(self,plate):
-        if plate in self.plates:
-            self.plates.remove(plate)
-            print(f"Car {plate} exited.")
-        else:
-            print(f"Car {plate} not found.")
-        self.Update_displays()
+        self.plates.remove(plate)
 
     def Update_displays(self):
         for display in self.displays:
-            display.update(self)
+            display.update(self.available_bays)
+            print(f"Car {display} updated.")
 
+
+    @property
     def available_bays(self):
-        return self.capacity - len(self.plates)
-    if available_bays() == 0:
-        print("No available bays.")
-
-
-
+        #car_park.available_bays
+        return max(0, self.capacity - len(self.plates))

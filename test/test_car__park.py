@@ -1,6 +1,3 @@
-
-
-
 import unittest
 from car_park import CarPark
 
